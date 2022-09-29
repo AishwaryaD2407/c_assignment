@@ -16,7 +16,7 @@
 int main()
 {
 	const int n=4;
-	int a,b,A,x=-1,y=10;
+	int a,b,A,x=-1,y=12;
 	for(a=-n;a<=n;a++,printf("\n"))
 	{
 		x=x+2;
@@ -30,7 +30,7 @@ int main()
 		}
 		for(b=1;b<=n+1-A;b++)
 		{
-			if(a<0)
+			if(a<=0)
 				printf("%d",x);
 			else
 				printf("%d",y);
