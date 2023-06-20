@@ -2,21 +2,20 @@
 
 int main()
 {
-	int data,i, pos;
-
+	int data,i,pos;
 	printf("Enter the data:");
 	scanf("%d",&data);
 
-	printf("Enter the position");
+	printf("Enter the position:");
 	scanf("%d",&pos);
 
 	for(i=31;i>=0;i--)
 		printf("%d",(data>>i)&1);
 	printf("\n");
 
-	data=data|(1<<pos);
+		if(((data>>pos)&1)==1)
+			printf("Bit is set.\n");
+		else
+			printf("Bit is not set.\n");
 
-	for(i=31;i>=0;i--)
-		printf("%d",(data>>i)&1);
-	printf("\n");
 }

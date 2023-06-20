@@ -2,21 +2,21 @@
 
 int main()
 {
-	int data,i, pos;
-
+	int data, i, cnt0=0, cnt1=0;
 	printf("Enter the data:");
 	scanf("%d",&data);
 
-	printf("Enter the position");
-	scanf("%d",&pos);
-
 	for(i=31;i>=0;i--)
 		printf("%d",(data>>i)&1);
 	printf("\n");
 
-	data=data|(1<<pos);
-
 	for(i=31;i>=0;i--)
-		printf("%d",(data>>i)&1);
-	printf("\n");
+	{
+		if(data&1)
+			cnt1++;
+		else
+			cnt0++;
+		data=data>>1;
+	}
+	printf("%d= cnt of 1\t %d= cnt of 0\n",cnt1,cnt0);
 }

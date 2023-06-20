@@ -1,27 +1,24 @@
-
-
 #include<stdio.h>
+
 int main()
 {
-	int data,bit,pos;
-	printf("Enter the number = ");
+	int data,i, pos;
+
+	printf("Enter the data:");
 	scanf("%d",&data);
-	printf("Enter bit position = ");
+
+	printf("Enter the position");
 	scanf("%d",&pos);
-	for(bit=31;bit>=0;bit--)
-	{
-		printf("%d",((data>>bit)&1));
-	}
-	data=data&(~(1<<pos));
+
+	for(i=31;i>=0;i--)
+		printf("%d",(data>>i)&1);
 	printf("\n");
-	for(bit=31;bit>=0;bit--)
-	{
-		printf("%d",((data>>bit)&1));
-	}
 
+	data=data & (~(1<<pos));
 
+	for(i=31;i>=0;i--)
+		printf("%d",(data>>i)&1);
+	printf("\n");
 }
-
-
 
 
